@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                 <ul class="nav navbar-nav">
+                &nbsp;
+            </ul>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="{{route('products.index')}}">Home <span class="sr-only">(current)</span></a>
+                <a href="{{ route('products.create') }}" class="btn btn-primary">Creat New Product</a>
+                </li>
+            </ul>
+            <h1 style="font-family:'Times New Roman',  Times, serif; font-weight:bolder; color:white; font-size:20px; text-transform:uppercase">
+            LARAVEL 8 CRUD - NAVBAR
+            </h1>
+        </div>
+    </div>
+</nav>
