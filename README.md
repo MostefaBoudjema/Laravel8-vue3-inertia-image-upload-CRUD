@@ -1,4 +1,4 @@
-Laravel8 vue3 inertia CRUD application with image upload and sweetalert2
+Laravel8 vue3 inertia CRUD application with image upload and sweetalert2 in bootstrap5 style
 
 <h1 align="center">Screenshots<h1>
 
