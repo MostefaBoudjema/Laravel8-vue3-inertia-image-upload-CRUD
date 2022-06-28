@@ -64,13 +64,12 @@
                         />
                     </p>
                 </div>
-                <button class="btn btn-dark me-2">
-                    <Link
-                        class="text-light text-decoration-none"
-                        :href="route('products.index')"
-                        >Back</Link
-                    >
-                </button>
+                <Link
+                    class="text-light text-decoration-none"
+                    :href="route('products.index')"
+                >
+                    <button class="btn btn-dark me-2">Back</button>
+                </Link>
             </div>
         </div>
     </AppLayout>
@@ -78,12 +77,12 @@
 
 <script>
 import AppLayout from "../../Shared/App";
-import { Head, Link } from "@inertiajs/inertia-vue3";
+// import { Head, Link } from "@inertiajs/inertia-vue3";
 export default {
     components: {
         AppLayout,
-        Head,
-        Link,
+        // Head,
+        // Link,
     },
     props: {
         Product: Object,
@@ -102,4 +101,3 @@ export default {
     },
 };
 </script>
-

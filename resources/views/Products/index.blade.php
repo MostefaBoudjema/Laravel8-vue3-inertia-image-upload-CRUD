@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Laravel 7 Crud')
 @section('content')
-  {{-- <a href="{{ route('products.create') }}" class="btn btn-dark">Creat New Product</a> --}}
+  <a href="{{ route('products.create') }}" class="btn btn-dark">Creat New Product</a>
 
   <div class="card">
     <div class="card-head bg-dark">

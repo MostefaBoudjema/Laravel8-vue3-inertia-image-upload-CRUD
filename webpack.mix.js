@@ -11,8 +11,7 @@ const path = require('path')
  |
  */
  mix.disableNotifications()
-mix.alias({
-    '@': path.join(__dirname, 'resources/js')
-  }).js('resources/js/app.js', 'public/js')
+mix.js('resources/js/app.js', 'public/js')
+.extract()
 .vue()
 .sass('resources/sass/app.scss', 'public/css');

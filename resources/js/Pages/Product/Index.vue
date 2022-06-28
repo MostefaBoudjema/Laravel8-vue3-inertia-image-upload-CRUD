@@ -1,7 +1,11 @@
 <template>
     <Head title="Product" />
     <AppLayout>
-        <div class="card-head bg-dark">
+        <nav class="navbar navbar-light bg-dark">
+            <div class="container-fluid">
+                <Link :href="route('products.create')" class="btn btn-primary">
+                    Create
+                </Link>
             <h1
                 style="
                     font-family: 'Times New Roman', Times, serif;
@@ -14,12 +18,12 @@
             >
                 Product List
             </h1>
-            <Link :href="route('products.create')" class="btn btn-primary">
-                Create
-            </Link>
-        </div>
+                <h1></h1>
+            </div>
+        </nav>
+        
         <div class="card-content">
-            <table class="table table-striped mt-3">
+            <table class="table-striped table mt-3">
                 <thead>
                     <tr>
                         <th scope="col">SN <sup>o</sup></th>
@@ -87,14 +91,14 @@
 
 <script>
 import AppLayout from "../../Shared/App";
-import { Head, Link } from "@inertiajs/inertia-vue3";
+// import { Head, Link } from "@inertiajs/inertia-vue3";
 import { Inertia } from "@inertiajs/inertia";
 const Swal = require("sweetalert2");
 export default {
     components: {
         AppLayout,
-        Head,
-        Link,
+        // Head,
+        // Link,
         Swal,
     },
     props: {

@@ -29,6 +29,9 @@
                             v-model="form.product_title"
                         />
                     </div>
+                    <div v-if="errors.product_title" class="text-danger">
+                        {{ errors.product_title }}
+                    </div>
                     <div class="col-md-4">
                         <label for="product-name">Product Name</label>
                         <input
@@ -38,6 +41,9 @@
                             id="product_name"
                             v-model="form.product_name"
                         />
+                    </div>
+                    <div v-if="errors.product_name" class="text-danger">
+                        {{ errors.product_name }}
                     </div>
                 </div>
 
@@ -50,12 +56,18 @@
                             v-model="form.product_price"
                         />
                     </div>
+                    <div v-if="errors.product_price" class="text-danger">
+                        {{ errors.product_price }}
+                    </div>
                     <div class="col-md-6">
                         <label for="product-code">Product Code</label>
                         <input
                             class="form-control"
                             v-model="form.product_code"
                         />
+                    </div>
+                    <div v-if="errors.product_code" class="text-danger">
+                        {{ errors.product_code }}
                     </div>
                 </div>
                 <div class="form-group">
@@ -79,14 +91,12 @@
                 </div>
 
                 <div class="my-3">
-                    <button class="btn btn-dark">Create Product</button>
-                    <button class="btn btn-dark ms-2">
-                        <Link
-                            class="text-light text-decoration-none"
-                            :href="route('products.index')"
-                            >Back</Link
-                        >
-                    </button>
+                    <button class="btn btn-dark me-2">Create Product</button>
+                    <Link
+                        class="text-light text-decoration-none btn btn-dark me-2"
+                        :href="route('products.index')"
+                        >Back</Link
+                    >
                 </div>
             </form>
         </div>
@@ -95,15 +105,16 @@
 
 <script>
 import AppLayout from "../../Shared/App";
-import { Head, Link } from "@inertiajs/inertia-vue3";
+// import { Head, Link } from "@inertiajs/inertia-vue3";
 export default {
     components: {
         AppLayout,
-        Head,
-        Link,
+        // Head,
+        // Link,
     },
     props: {
         Products: Object,
+        errors: Object,
     },
     data() {
         return {
