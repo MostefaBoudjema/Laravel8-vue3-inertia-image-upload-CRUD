@@ -89,7 +89,7 @@
                     <p>
                         <img
                             class="img-thumbnail"
-                            :src="'../../Product/' + Product.product_image"
+                            :src="'../../storage/Product/' + Product.product_image"
                             width="80"
                             height="50"
                             alt=""
@@ -112,6 +112,8 @@
 
 <script>
 import AppLayout from "../../Shared/App";
+
+
 // import { Head, Link } from "@inertiajs/inertia-vue3";
 export default {
     components: {
