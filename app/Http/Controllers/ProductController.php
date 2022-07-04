@@ -21,6 +21,17 @@ class ProductController extends Controller
                 return Inertia::render('Product/Index', [
                         'Products' => Product::latest()->get()
                 ]);
+                // return Inertia::render('Product/Index', [
+                //         'Products' => Product::all()->map(fn($product)=>[
+                //                 'product_title' => $product->product_title,
+                //                 'product_name' => $product->product_name,
+                //                 'product_code' => $product->product_code,
+                //                 'product_price' => $product->product_price,
+                //                 'product_description' => $product->product_description,
+                //                 'product_image' => $product->product_image,
+                //         ])
+                // ]);
+
                 // $Products = Product::orderBy('updated_at','desc')->paginate(10);
                 // return view('Products.index')->with('Products', $Products);
         }
@@ -51,7 +62,7 @@ class ProductController extends Controller
                 if ($file) {
                         $extension = $file->getClientOriginalExtension();
                         $product_image = time() . '.' . $extension;
-                        $file->move('Product/', $product_image);
+                        $file->move('storage/Product/', $product_image);
                         Storage::put($product_image, $product_image, 'public');
                 }
                 $prod = new Product([
@@ -108,10 +119,10 @@ class ProductController extends Controller
                 $file = $request->file('product_image');
                 if ($file) {
                         $Product = Product::find($id);
-                        $this->delete_image('Product/', $Product->product_image);
+                        $this->delete_image('storage/Product/', $Product->product_image);
                         $extension = $file->getClientOriginalExtension();
                         $product_image = time() . '.' . $extension;
-                        $file->move('Product/', $product_image);
+                        $file->move('storage/Product/', $product_image);
 
                         $Product = array(
                                 'product_title' => $request->product_title,
@@ -147,7 +158,7 @@ class ProductController extends Controller
         public function destroy($id)
         {
                 $Product = Product::find($id);
-                $this->delete_image('Product/', $Product->product_image);
+                $this->delete_image('storage/Product/', $Product->product_image);
                 $Product->delete();
                 return redirect('/products')->with('success', 'Congrats Product Deleted Successfully!');
 

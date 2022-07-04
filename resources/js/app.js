@@ -2,8 +2,7 @@ require('./bootstrap');
 
 import { createApp, h } from "vue";
 import { InertiaProgress } from "@inertiajs/progress";
-import { createInertiaApp } from "@inertiajs/inertia-vue3";
-import { Head, Link } from "@inertiajs/inertia-vue3";
+import { createInertiaApp,Head, Link } from "@inertiajs/inertia-vue3";
 InertiaProgress.init();
 
 createInertiaApp({

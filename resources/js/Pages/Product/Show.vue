@@ -57,7 +57,7 @@
                     <p>
                         <img
                             class="img-thumbnail"
-                            :src="'../Product/' + Product.product_image"
+                            :src="'../storage/Product/' + Product.product_image"
                             width="180"
                             height="200"
                             alt=""

@@ -43,7 +43,7 @@
                             <Link :href="route('products.show', Product.id)"
                                 ><img
                                     class="img-thumbnail"
-                                    :src="'Product/' + Product.product_image"
+                                    :src="'storage/Product/' + Product.product_image"
                                     alt=""
                                     style="height: 80"
                             /></Link>
@@ -85,6 +85,7 @@
                     </tr>
                 </tbody>
             </table>
+            <!-- <pagination :links="Products.links"/> -->
         </div>
     </AppLayout>
 </template>
@@ -93,13 +94,28 @@
 import AppLayout from "../../Shared/App";
 // import { Head, Link } from "@inertiajs/inertia-vue3";
 import { Inertia } from "@inertiajs/inertia";
+// import Pagination from '../../Shared/Pagination.vue';
 const Swal = require("sweetalert2");
+
+// const Toast = Swal.mixin({
+//     toast: true,
+//     position: 'top-end',
+//     showConfirmButton: false,
+//     timer: 1500,
+//     timerProgressBar: true,
+//     onOpen: (toast) => {
+//         toast.addEventListener('mouseenter', Swal.stopTimer)
+//         toast.addEventListener('mouseleave', Swal.resumeTimer)
+//     }
+// });
+// window.Toast = Toast;
 export default {
     components: {
         AppLayout,
         // Head,
         // Link,
         Swal,
+        // Pagination,
     },
     props: {
         Products: Object,
